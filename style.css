@@ -1,0 +1,103 @@
+/* --- Reset e Base --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #2c3e50;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main { flex: 1; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
+
+/* --- Header --- */
+header { padding: 20px 0; border-bottom: 1px solid #f0f0f0; }
+.brand { display: flex; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 5%; }
+.logo-img { height: 40px; margin-right: 12px; }
+.brand-name { font-weight: 700; font-size: 1.4rem; color: #00334e; }
+
+/* --- Hero --- */
+.hero { padding: 80px 0; text-align: center; background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%); }
+.hero h1 { font-size: clamp(2rem, 5vw, 3rem); color: #00334e; margin-bottom: 15px; font-weight: 800; }
+.highlight { color: #0077b6; }
+.hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: #5a7184; }
+
+/* --- Info Grid --- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 5%;
+}
+.info-card { padding: 35px; border-radius: 15px; border: 1px solid #eee; text-align: center; transition: 0.3s; }
+.info-card:hover { border-color: #0077b6; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.info-card i { color: #0077b6; margin-bottom: 20px; width: 35px; height: 35px; }
+
+/* --- Manifesto --- */
+.manifesto-container { padding: 40px 5%; }
+.manifesto-card { 
+    background: #00334e; 
+    color: white; 
+    padding: 60px 10%; 
+    border-radius: 24px; 
+    text-align: center; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+.manifesto-card h2 { margin-bottom: 20px; font-size: 2rem; }
+
+/* --- Processo --- */
+.process { padding: 60px 0; }
+.process-flex { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; text-align: center; }
+.process-item { flex: 1; min-width: 250px; }
+.step { font-size: 2.5rem; font-weight: 800; color: #e1f5fe; display: block; }
+.process-item h4 { margin: 10px 0; color: #00334e; font-size: 1.2rem; }
+
+/* --- FAQ --- */
+.faq-section { padding: 80px 0; background-color: #fff; }
+.faq-section h2 { text-align: center; margin-bottom: 40px; color: #00334e; }
+.accordion { max-width: 700px; margin: 0 auto; }
+.accordion-item { border-bottom: 1px solid #eee; }
+.accordion-header {
+    width: 100%; padding: 25px 0; background: none; border: none;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 1.1rem; font-weight: 600; color: #00334e; cursor: pointer;
+}
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.accordion-content { padding-bottom: 25px; color: #666; font-size: 1rem; }
+.active .accordion-header { color: #0077b6; }
+.active .accordion-header i { transform: rotate(45deg); color: #0077b6; transition: 0.3s; }
+
+/* --- Final CTA --- */
+.final-cta { padding: 100px 0; text-align: center; border-top: 1px solid #f0f0f0; }
+.final-cta h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); color: #00334e; margin: 20px 0; font-weight: 800; }
+.final-cta p { color: #5a7184; margin-bottom: 30px; }
+.zap-icon { width: 40px; height: 40px; color: #0077b6; animation: pulse 2s infinite; }
+.status-badge { display: inline-block; padding: 10px 25px; background: #00334e; color: white; border-radius: 50px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+/* --- Footer --- */
+footer { background: #fdfdfd; padding: 40px 0; border-top: 1px solid #eee; }
+.footer-content { 
+    max-width: 1100px; margin: 0 auto; padding: 0 5%;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+}
+.contact-info { display: flex; align-items: center; gap: 10px; color: #00334e; font-weight: 600; }
+.copy { font-size: 0.9rem; color: #94a3b8; }
+
+@media (max-width: 600px) {
+    .footer-content { flex-direction: column; text-align: center; }
+}

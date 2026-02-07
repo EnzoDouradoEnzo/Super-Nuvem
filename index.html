@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editora Super Nuvem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <nav>
+                <div class="brand">
+                    <img src="logo2.png" alt="Logo Super Nuvem" class="logo-img">
+                    <span class="brand-name">Super Nuvem</span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <h1>Editora <span class="highlight">Super Nuvem</span></h1>
+                    <p>Criando o futuro da leitura digital através de obras exclusivas e autoria própria.</p>
+                </div>
+            </section>
+
+            <section class="info-grid">
+                <div class="info-card">
+                    <i data-lucide="monitor"></i>
+                    <h3>Leitura Sem Fronteiras</h3>
+                    <p>E-books projetados para oferecer uma experiência fluida em tablets, e-readers e smartphones.</p>
+                </div>
+                <div class="info-card">
+                    <i data-lucide="cpu"></i>
+                    <h3>Tecnologia Editorial</h3>
+                    <p>Utilizamos os formatos mais modernos para garantir interatividade e acessibilidade total.</p>
+                </div>
+                <div class="info-card">
+                    <i data-lucide="feather"></i>
+                    <h3>Conteúdo Original</h3>
+                    <p>Cada linha é desenvolvida por nossa equipe interna, garantindo um selo de qualidade único.</p>
+                </div>
+            </section>
+
+            <section class="manifesto-container">
+                <div class="manifesto-card">
+                    <h2>Por que a Nuvem?</h2>
+                    <p>A "Super Nuvem" representa a liberdade da informação. Assim como as nuvens mudam de forma, nossa editora se adapta às tecnologias. Não imprimimos papel, imprimimos ideias na memória digital de nossos leitores.</p>
+                </div>
+            </section>
+
+            <section class="process">
+                <div class="container process-flex">
+                    <div class="process-item">
+                        <span class="step">01</span>
+                        <h4>Ideação</h4>
+                        <p>Pesquisamos temas relevantes e inexplorados no mercado.</p>
+                    </div>
+                    <div class="process-item">
+                        <span class="step">02</span>
+                        <h4>Escrita</h4>
+                        <p>Conteúdo desenvolvido com foco em clareza e autoridade.</p>
+                    </div>
+                    <div class="process-item">
+                        <span class="step">03</span>
+                        <h4>Design</h4>
+                        <p>Diagramação pensada para o conforto visual do leitor.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section">
+                <div class="container">
+                    <h2>Dúvidas Frequentes</h2>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                Quais são os temas dos e-books?
+                                <i data-lucide="plus"></i>
+                            </button>
+                            <div class="accordion-body">
+                                <div class="accordion-content">
+                                    <p>Focamos em guias de tecnologia, produtividade e literatura autoral, todos criados internamente.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                Como adquiro um título?
+                                <i data-lucide="plus"></i>
+                            </button>
+                            <div class="accordion-body">
+                                <div class="accordion-content">
+                                    <p>Em breve, disponibilizaremos links diretos para as principais plataformas de venda digital aqui no site.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                A editora publica autores externos?
+                                <i data-lucide="plus"></i>
+                            </button>
+                            <div class="accordion-body">
+                                <div class="accordion-content">
+                                    <p>No momento, a Super Nuvem trabalha exclusivamente com projetos de autoria própria e produção fechada.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="final-cta">
+                <div class="container">
+                    <i data-lucide="zap" class="zap-icon"></i>
+                    <h2>Grandes histórias estão sendo preparadas.</h2>
+                    <p>Acompanhe o horizonte. Em breve, uma nova forma de ler o mundo.</p>
+                    <div class="status-badge">Catálogo em desenvolvimento</div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="contact-info">
+                    <i data-lucide="mail"></i>
+                    <span>supernuvem.contato@gmail.com</span>
+                </div>
+                <p class="copy">&copy; 2026 Editora Super Nuvem</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionItem = button.parentElement;
+                const isOpen = accordionItem.classList.contains('active');
+                
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.accordion-body').style.maxHeight = null;
+                });
+
+                if (!isOpen) {
+                    accordionItem.classList.add('active');
+                    const body = accordionItem.querySelector('.accordion-body');
+                    body.style.maxHeight = body.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
